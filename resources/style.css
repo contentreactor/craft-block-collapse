@@ -1,0 +1,50 @@
+#matrix-toggle .btn [data-icon] { margin: 0 }
+
+#matrix-toggle .btn > svg {
+	--toggle-icon-size: 15px;
+	fill: #3f4d5a;
+	width: var(--toggle-icon-size);
+	height: var(--toggle-icon-size);
+}
+
+#matrix-toggle-tooltip {
+	--ck-color-tooltip-background: var(--ck-color-tooltip-background, #333);
+	--ck-balloon-border-width: var(--ck-balloon-border-width, 0px);
+	--ck-balloon-arrow-offset: var(--ck-balloon-arrow-offset, 0px);
+	--ck-balloon-arrow-half-width: var(--ck-balloon-arrow-half-width, 4px);
+	--ck-balloon-arrow-height: var(--ck-balloon-arrow-height, 4px);
+	--ck-tooltip-text-padding: var(--ck-tooltip-text-padding, 4px);
+	--ck-font-size-base: var(--ck-font-size-base, 13px);
+	--ck-line-height-base: var(--ck-line-height-base, 1.84615);
+	--ck-balloon-panel-arrow-z-index: var(--ck-balloon-panel-arrow-z-index, -2);
+}
+
+#matrix-toggle-tooltip {
+	display: none;
+	position: absolute;
+	background-color: #333;
+	color: #fff;
+	padding: 0 .5rem;
+	border-radius: 5px;
+	z-index: 1000;
+	transform: translateX(-50%);
+}
+
+#matrix-toggle-tooltip .small-tooltip {
+	font: normal normal normal 13px / 1.84615 Helvetica,Arial,Tahoma,Verdana,Sans-Serif;
+}
+
+#matrix-toggle-tooltip .small-tooltip:after {
+	position: absolute;
+	content: "";
+	z-index: -1;
+	height: 0;
+	width: 0;
+	border-style: solid;
+	border-width: 0 4px 4px 4px;
+	margin-top: 0;
+	border-color: transparent transparent #333 transparent;
+	top: -4px;
+	margin-left: -4px;
+	left: 50%;
+}

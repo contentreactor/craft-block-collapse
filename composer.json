@@ -1,0 +1,30 @@
+{
+	"name": "contentreactor/craft-block-collapse",
+	"description": "Block field collapse/expand toggle.",
+	"type": "yii2-extension",
+	"version": "1.0.0",
+	"require": {
+		"craftcms/cms": "^4.4|^5.8"
+	},
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"ContentReactor\\Collapse\\": "src/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Marko Gajić",
+			"email": "metalmorgoth@gmail.com",
+			"homepage": "https://github.com/MarcusGaius"
+		},
+		{
+			"name": "ContentReactor",
+			"email": "info@contentreactor.com",
+			"homepage": "https://github.com/contentreactor"
+		}
+	],
+	"extra": {
+		"bootstrap": "ContentReactor\\Collapse\\Collapse"
+	}
+}
