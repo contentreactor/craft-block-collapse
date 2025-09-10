@@ -45,6 +45,7 @@ class Collapse extends Module implements BootstrapInterface
 			Element::EVENT_DEFINE_ADDITIONAL_BUTTONS,
 			static function (DefineHtmlEvent $event) {
 				if (!$event->sender instanceof Element || $event->sender instanceof User) return;
+				CollapseBundle::register(Craft::$app->getView());
 				$event->html = Craft::$app->getView()->renderTemplate('@block-collapse/collapse-toggle.twig');
 			}
 		);
@@ -56,6 +57,5 @@ class Collapse extends Module implements BootstrapInterface
 				$event->roots['@block-collapse'] = __DIR__ . '/templates';
 			}
 		);
-		CollapseBundle::register(Craft::$app->getView());
 	}
 }

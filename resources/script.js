@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const rect = this.getBoundingClientRect()
 			tooltipWrapper.style.left = rect.left + (rect.width / 2) + window.scrollX + 'px'
 			tooltipWrapper.style.top = rect.bottom + 5 + window.scrollY + 'px'
-			setTimeout(() => tooltipWrapper.style.display = 'block', 1000)
+			setTimeout(() => tooltipWrapper.style.display = 'block', 250)
 		})
 
 		el.addEventListener('mouseleave', function () {
