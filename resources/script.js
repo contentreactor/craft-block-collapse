@@ -8,15 +8,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	document.querySelectorAll('#matrix-toggle [data-tooltip]').forEach(el => {
 		el.addEventListener('mouseenter', function () {
+			tooltipWrapper.style.display = 'none'
 			tooltip.textContent = this.dataset.tooltip
 			const rect = this.getBoundingClientRect()
 			tooltipWrapper.style.left = rect.left + (rect.width / 2) + window.scrollX + 'px'
 			tooltipWrapper.style.top = rect.bottom + 5 + window.scrollY + 'px'
-			setTimeout(() => tooltipWrapper.style.display = 'block', 250)
+			setTimeout(() => {
+				tooltipWrapper.style.display = 'block'
+			}, 500)
 		})
 
 		el.addEventListener('mouseleave', function () {
-			tooltipWrapper.style.display = 'none'
+			setTimeout(() => {
+				tooltipWrapper.style.display = 'none'
+			}, 250)
 		})
 	})
 })
