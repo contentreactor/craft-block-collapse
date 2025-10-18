@@ -8,6 +8,7 @@ use craft\base\Element;
 use craft\elements\User;
 use craft\events\DefineHtmlEvent;
 use craft\events\RegisterTemplateRootsEvent;
+use craft\i18n\PhpMessageSource;
 use craft\web\Application as CraftWebApp;
 use craft\web\View;
 use yii\base\BootstrapInterface;
@@ -54,8 +55,14 @@ class Collapse extends Module implements BootstrapInterface
 			View::class,
 			View::EVENT_REGISTER_CP_TEMPLATE_ROOTS,
 			static function (RegisterTemplateRootsEvent $event): void {
-				$event->roots['@block-collapse'] = __DIR__ . '/templates';
+				$event->roots['@block-collapse'] = __DIR__ . '/Templates';
 			}
 		);
+
+		Craft::$app->i18n->translations['block-collapse'] = [
+			'class' => PhpMessageSource::class,
+			'basePath' => __DIR__ . '/Translations',
+			'allowOverrides' => true,
+		];
 	}
 }

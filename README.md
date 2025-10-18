@@ -8,3 +8,7 @@ composer require contentreactor/craft-block-collapse
 ```
 ddev composer require contentreactor/craft-block-collapse
 ```
+
+## Localization
+
+The button labels and tooltips are translatable with the message category `block-collapse`.

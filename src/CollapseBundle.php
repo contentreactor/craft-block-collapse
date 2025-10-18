@@ -9,14 +9,14 @@ use craft\web\View;
 
 class CollapseBundle extends AssetBundle
 {
+	public $sourcePath = __DIR__ . '/Resources';
+
 	public $css = [
 		'style.css',
 	];
 
 	public function init(): void
 	{
-		$this->sourcePath = dirname(__DIR__) . '/resources';
-
 		$craftVersion = Collapse::getInstance()->craftVersion;
 		$this->js = [
 			[
