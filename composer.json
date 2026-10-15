@@ -1,16 +1,24 @@
 {
 	"name": "contentreactor/craft-block-collapse",
-	"description": "Block field collapse/expand toggle.",
-	"type": "yii2-extension",
-	"version": "1.2.0",
-	"require": {
-		"craftcms/cms": "^4.4|^5.8"
-	},
+	"description": "Collapse or expand every block on an element edit screen, with a button or a keyboard shortcut of your choosing.",
+	"type": "craft-plugin",
 	"license": "MIT",
-	"autoload": {
-		"psr-4": {
-			"ContentReactor\\Collapse\\": "src/"
-		}
+	"keywords": [
+		"craft",
+		"cms",
+		"craftcms",
+		"craft-plugin",
+		"matrix",
+		"neo",
+		"blocks",
+		"collapse",
+		"control panel",
+		"contentreactor"
+	],
+	"support": {
+		"docs": "https://github.com/contentreactor/craft-block-collapse",
+		"issues": "https://github.com/contentreactor/craft-block-collapse/issues",
+		"source": "https://github.com/contentreactor/craft-block-collapse"
 	},
 	"authors": [
 		{
@@ -24,7 +32,50 @@
 			"homepage": "https://github.com/contentreactor"
 		}
 	],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"require": {
+		"php": ">=8.2",
+		"craftcms/cms": "^4.4|^5.0"
+	},
+	"require-dev": {
+		"craftcms/phpstan": "dev-main",
+		"developion/coding-standards": "^1.1",
+		"friendsofphp/php-cs-fixer": "^3.54",
+		"pestphp/pest": "^3.0",
+		"phpstan/phpstan": "^2.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"ContentReactor\\BlockCollapse\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"ContentReactor\\BlockCollapse\\Tests\\": "tests/"
+		}
+	},
 	"extra": {
-		"bootstrap": "ContentReactor\\Collapse\\Collapse"
+		"handle": "block-collapse",
+		"name": "Block Collapse",
+		"class": "ContentReactor\\BlockCollapse\\Plugin",
+		"developer": "ContentReactor",
+		"developerUrl": "https://www.contentreactor.com/",
+		"documentationUrl": "https://github.com/contentreactor/craft-block-collapse",
+		"changelogUrl": "https://raw.githubusercontent.com/contentreactor/craft-block-collapse/develop/CHANGELOG.md"
+	},
+	"scripts": {
+		"phpstan": "phpstan --memory-limit=2G",
+		"check-cs": "php-cs-fixer check --diff --ansi --using-cache=no",
+		"fix-cs": "php-cs-fixer fix --diff --ansi --using-cache=no",
+		"test": "pest"
+	},
+	"config": {
+		"allow-plugins": {
+			"craftcms/plugin-installer": true,
+			"yiisoft/yii2-composer": true,
+			"pestphp/pest-plugin": true
+		},
+		"sort-packages": true
 	}
 }

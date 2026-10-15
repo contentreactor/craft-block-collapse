@@ -1,0 +1,20 @@
+{# @var shortcuts \ContentReactor\BlockCollapse\models\Shortcuts #}
+{% set collapseLabel = 'Collapse'|t('block-collapse') %}
+{% set expandLabel = 'Expand'|t('block-collapse') %}
+
+<div class="btngroup bc-toggle bc-pending" data-bc-toggle style="order: -99999">
+	<button type="button"
+	        class="btn bc-btn"
+	        data-bc-action="collapse"
+	        data-bc-label="{{ collapseLabel }}"
+	        data-bc-shortcut="{{ shortcuts.collapse }}"
+	        aria-label="{{ collapseLabel }}"
+	>{{ include('block-collapse/_icons/collapse.svg') }}</button>
+	<button type="button"
+	        class="btn bc-btn"
+	        data-bc-action="expand"
+	        data-bc-label="{{ expandLabel }}"
+	        data-bc-shortcut="{{ shortcuts.expand }}"
+	        aria-label="{{ expandLabel }}"
+	>{{ include('block-collapse/_icons/expand.svg') }}</button>
+</div>

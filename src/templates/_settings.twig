@@ -1,0 +1,113 @@
+{# @var plugin \ContentReactor\BlockCollapse\Plugin #}
+{# @var settings \ContentReactor\BlockCollapse\models\Settings #}
+{# @var providers \ContentReactor\BlockCollapse\models\BlockProvider[] #}
+{# @var overrides string[] #}
+{% import '_includes/forms' as forms %}
+
+{% macro overrideWarning(attribute, overrides) %}
+	{%- if attribute in overrides -%}
+		{{- 'This is being overridden by the {file} config file.'|t('app', { file: 'block-collapse.php' }) -}}
+	{%- endif -%}
+{% endmacro %}
+{% from _self import overrideWarning %}
+
+{{ forms.textField({
+	label: settings.getAttributeLabel('collapseShortcut'),
+	instructions: 'Used by everyone who hasn’t picked their own shortcuts.'|t('block-collapse'),
+	id: 'collapseShortcut',
+	name: 'collapseShortcut',
+	value: settings.collapseShortcut,
+	errors: settings.getErrors('collapseShortcut'),
+	disabled: 'collapseShortcut' in overrides,
+	warning: overrideWarning('collapseShortcut', overrides),
+	autocomplete: false,
+	inputAttributes: {
+		data: { 'bc-recorder': true },
+		spellcheck: 'false',
+	},
+}) }}
+
+{{ forms.textField({
+	label: settings.getAttributeLabel('expandShortcut'),
+	id: 'expandShortcut',
+	name: 'expandShortcut',
+	value: settings.expandShortcut,
+	errors: settings.getErrors('expandShortcut'),
+	disabled: 'expandShortcut' in overrides,
+	warning: overrideWarning('expandShortcut', overrides),
+	autocomplete: false,
+	inputAttributes: {
+		data: { 'bc-recorder': true },
+		spellcheck: 'false',
+	},
+}) }}
+
+{{ forms.lightswitchField({
+	label: settings.getAttributeLabel('enableButtons'),
+	instructions: settings.getAttributeHint('enableButtons'),
+	id: 'enableButtons',
+	name: 'enableButtons',
+	on: settings.enableButtons,
+	disabled: 'enableButtons' in overrides,
+	warning: overrideWarning('enableButtons', overrides),
+}) }}
+
+{{ forms.lightswitchField({
+	label: settings.getAttributeLabel('enableShortcuts'),
+	id: 'enableShortcuts',
+	name: 'enableShortcuts',
+	on: settings.enableShortcuts,
+	disabled: 'enableShortcuts' in overrides,
+	warning: overrideWarning('enableShortcuts', overrides),
+}) }}
+
+{{ forms.lightswitchField({
+	label: settings.getAttributeLabel('allowUserOverrides'),
+	instructions: settings.getAttributeHint('allowUserOverrides'),
+	id: 'allowUserOverrides',
+	name: 'allowUserOverrides',
+	on: settings.allowUserOverrides,
+	disabled: 'allowUserOverrides' in overrides,
+	warning: overrideWarning('allowUserOverrides', overrides),
+}) }}
+
+{{ forms.lightswitchField({
+	label: settings.getAttributeLabel('hideWhenEmpty'),
+	instructions: settings.getAttributeHint('hideWhenEmpty'),
+	id: 'hideWhenEmpty',
+	name: 'hideWhenEmpty',
+	on: settings.hideWhenEmpty,
+	disabled: 'hideWhenEmpty' in overrides,
+	warning: overrideWarning('hideWhenEmpty', overrides),
+}) }}
+
+<hr>
+
+<h2>{{ 'Collapsible blocks'|t('block-collapse') }}</h2>
+
+<p>{{ 'Block types the plugin currently acts on. Plugins and modules can add their own.'|t('block-collapse') }}</p>
+
+<table class="data fullwidth">
+	<thead>
+		<tr>
+			<th scope="col">{{ 'Handle'|t('block-collapse') }}</th>
+			<th scope="col">{{ 'Name'|t('block-collapse') }}</th>
+			<th scope="col">{{ 'Block selector'|t('block-collapse') }}</th>
+			<th scope="col">{{ 'Strategy'|t('block-collapse') }}</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for provider in providers %}
+			<tr>
+				<td><code>{{ provider.handle }}</code></td>
+				<td>{{ provider.label }}</td>
+				<td><code>{{ provider.blockSelector }}</code></td>
+				<td><code>{{ provider.strategy }}</code></td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="4">{{ 'No collapsible block types are registered.'|t('block-collapse') }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>

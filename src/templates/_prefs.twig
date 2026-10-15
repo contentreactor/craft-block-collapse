@@ -1,0 +1,43 @@
+{# @var shortcuts \ContentReactor\BlockCollapse\models\Shortcuts #}
+{# @var overridden bool #}
+{% import '_includes/forms' as forms %}
+
+<hr>
+
+<h2>{{ 'Block Collapse'|t('block-collapse') }}</h2>
+
+<div class="bc-prefs" data-bc-prefs>
+	{{ forms.textField({
+		label: 'Collapse all blocks'|t('block-collapse'),
+		instructions: 'Click the field and press the keys you want to use.'|t('block-collapse'),
+		id: 'block-collapse-collapse',
+		name: 'blockCollapseShortcuts[collapse]',
+		value: shortcuts.collapse,
+		autocomplete: false,
+		inputAttributes: {
+			data: { 'bc-recorder': true },
+			spellcheck: 'false',
+		},
+	}) }}
+
+	{{ forms.textField({
+		label: 'Expand all blocks'|t('block-collapse'),
+		instructions: 'Click the field and press the keys you want to use.'|t('block-collapse'),
+		id: 'block-collapse-expand',
+		name: 'blockCollapseShortcuts[expand]',
+		value: shortcuts.expand,
+		autocomplete: false,
+		inputAttributes: {
+			data: { 'bc-recorder': true },
+			spellcheck: 'false',
+		},
+	}) }}
+
+	<p class="light">
+		{{ 'Shortcuts need Ctrl (⌘ on macOS) or Alt, plus one other key.'|t('block-collapse') }}
+		{{ 'Empty both fields to go back to the site defaults.'|t('block-collapse') }}
+		{% if not overridden %}
+			{{ 'You’re using the site defaults.'|t('block-collapse') }}
+		{% endif %}
+	</p>
+</div>
