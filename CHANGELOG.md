@@ -24,8 +24,6 @@
 - The buttons no longer replace other plugins' additional buttons.
 - The shortcuts no longer fire while you are typing in a text field, and `Ctrl` means `⌘` on macOS.
 - Button icons follow the control panel's colors, in light and in dark mode.
-- The control panel assets are bundled from ES modules under
-  `src/web/assets/collapse/src` and ship built in `dist`.
 - Matrix and Neo are now declared as block providers rather than hard-coded, and the package
   requires PHP 8.2 or later.
 

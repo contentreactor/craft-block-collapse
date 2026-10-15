@@ -128,7 +128,7 @@ are already collapsed.
 ### Doing it in JavaScript
 
 For anything that needs real logic, register a handler from an asset bundle that depends on
-`ContentReactor\BlockCollapse\web\assets\collapse\CollapseAsset`:
+`ContentReactor\BlockCollapse\Web\Assets\Collapse\CollapseAsset`:
 
 ```js
 window.BlockCollapse.register({
@@ -167,12 +167,17 @@ composer check-cs   # PHP CS Fixer (Developion coding standards)
 composer phpstan    # PHPStan, level 6
 composer test       # Pest
 npm test            # Vitest
-npm run build       # Rebuild src/web/assets/collapse/dist
+npm run prod        # Rebuild assets, minified (npm run build is an alias)
+npm run dev         # …unminified, with a JS sourcemap
+npm run watch       # …and rebuild on every change (npm run watch-prod for minified)
 ```
 
-The control panel JavaScript lives in `src/web/assets/collapse/src` and is bundled with Rollup;
-`dist` is committed because it is what the Composer package ships. Run `npm run build` before
-tagging a release.
+`prod` minifies the JavaScript with terser and the CSS with clean-css; `dev` leaves both
+readable. Both write to `public/`, so rebuild with `npm run prod` before you commit.
+
+`public/` is committed because it is what the Composer package ships, so run `npm run build`
+before tagging a release — CI fails if the built output doesn't match its sources. Development
+happens on the Node version in `.nvmrc`.
 
 ## License
 

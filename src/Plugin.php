@@ -8,7 +8,7 @@ use ContentReactor\BlockCollapse\services\{
 	Preferences,
 	Providers,
 };
-use ContentReactor\BlockCollapse\web\assets\collapse\CollapseAsset;
+use ContentReactor\BlockCollapse\Web\Assets\Collapse\CollapseAsset;
 use Craft;
 use craft\base\{
 	Element,

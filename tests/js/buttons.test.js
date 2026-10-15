@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import * as buttons from '../../src/web/assets/collapse/src/buttons.js'
-import * as registry from '../../src/web/assets/collapse/src/registry.js'
+import * as buttons from '../../assets/Collapse/src/js/buttons.js'
+import * as registry from '../../assets/Collapse/src/js/registry.js'
 
 const TOGGLE = `
 	<form id="outer">

@@ -8,6 +8,7 @@ require 'vendor/autoload.php';
 
 $finder = (new Finder())
 	->in([
+		__DIR__ . '/public',
 		__DIR__ . '/src',
 		__DIR__ . '/tests',
 	])

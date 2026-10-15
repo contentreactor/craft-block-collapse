@@ -47,6 +47,9 @@
 	border-color: transparent transparent var(--gray-900, #20262e) transparent;
 }
 
-.bc-prefs .bc-recorder-hint {
-	margin-top: -0.5rem;
+.bc-prefs-heading {
+	border-block-start: 1px solid var(--border-hairline, var(--hairline-color, rgba(51, 64, 77, 0.1)));
+	padding-block-start: var(--xl, 24px);
+	margin-inline: calc(var(--padding) * -1);
+	padding-inline: var(--padding);
 }

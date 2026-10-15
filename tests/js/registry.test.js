@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import * as registry from '../../src/web/assets/collapse/src/registry.js'
+import * as registry from '../../assets/Collapse/src/js/registry.js'
 
 const handler = (handle, overrides = {}) => ({
 	handle,

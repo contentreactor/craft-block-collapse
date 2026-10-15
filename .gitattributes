@@ -11,12 +11,13 @@
 /phpunit.xml.dist export-ignore
 /rollup.config.js export-ignore
 /vitest.config.js export-ignore
+/.nvmrc export-ignore
 /.github export-ignore
 /.github/** export-ignore
 /tests export-ignore
 /tests/** export-ignore
-/src/web/assets/collapse/src export-ignore
-/src/web/assets/collapse/src/** export-ignore
+/assets export-ignore
+/assets/** export-ignore
 
 # Auto-detect text files and perform LF normalization
 * text=auto

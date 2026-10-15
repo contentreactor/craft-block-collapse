@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import * as keymap from '../../src/web/assets/collapse/src/keymap.js'
+import * as keymap from '../../assets/Collapse/src/js/keymap.js'
 
 const press = (code, modifiers = {}) => ({
 	code,

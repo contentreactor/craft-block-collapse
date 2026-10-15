@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import * as registry from '../../src/web/assets/collapse/src/registry.js'
-import * as shortcuts from '../../src/web/assets/collapse/src/shortcuts.js'
+import * as registry from '../../assets/Collapse/src/js/registry.js'
+import * as shortcuts from '../../assets/Collapse/src/js/shortcuts.js'
 
 const config = overrides => ({
 	shortcuts: { collapse: 'ctrl+comma', expand: 'ctrl+period' },

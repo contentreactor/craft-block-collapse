@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import * as recorder from '../../src/web/assets/collapse/src/recorder.js'
+import * as recorder from '../../assets/Collapse/src/js/recorder.js'
 
 let container
 

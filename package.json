@@ -5,17 +5,24 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "rollup -c",
-		"watch": "rollup -c --watch",
+		"dev": "rollup -c --environment MODE:dev",
+		"prod": "rollup -c --environment MODE:prod",
+		"build": "rollup -c --environment MODE:prod",
+		"watch": "rollup -c --environment MODE:dev --watch",
+		"watch-prod": "rollup -c --environment MODE:prod --watch",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"prettier": "prettier src/web/assets/collapse/src tests/js rollup.config.js vitest.config.js --write --config .prettierrc"
+		"prettier": "prettier assets tests/js rollup.config.js vitest.config.js --write --config .prettierrc"
 	},
 	"devDependencies": {
 		"@rollup/plugin-terser": "^0.4.4",
+		"clean-css": "^5.3.3",
 		"jsdom": "^26.1.0",
 		"prettier": "^3.6.2",
 		"rollup": "^4.52.4",
 		"vitest": "^3.2.4"
+	},
+	"engines": {
+		"node": ">=20.19"
 	}
 }

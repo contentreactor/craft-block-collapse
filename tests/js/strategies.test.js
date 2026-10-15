@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import * as registry from '../../src/web/assets/collapse/src/registry.js'
-import { createHandler, registerProviders } from '../../src/web/assets/collapse/src/strategies.js'
+import * as registry from '../../assets/Collapse/src/js/registry.js'
+import { createHandler, registerProviders } from '../../assets/Collapse/src/js/strategies.js'
 
 /** A jQuery stand-in that only does what the strategies ask of it. */
 function fakeJQuery(data = new Map()) {

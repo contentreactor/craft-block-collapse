@@ -1,6 +1,6 @@
 {
 	"name": "contentreactor/craft-block-collapse",
-	"description": "Collapse or expand every block on an element edit screen, with a button or a keyboard shortcut of your choosing.",
+	"description": "Collapse or expand every block on an element edit screen.",
 	"type": "craft-plugin",
 	"license": "MIT",
 	"keywords": [
@@ -47,7 +47,8 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"ContentReactor\\BlockCollapse\\": "src/"
+			"ContentReactor\\BlockCollapse\\": "src/",
+			"ContentReactor\\BlockCollapse\\Web\\Assets\\": "public/"
 		}
 	},
 	"autoload-dev": {

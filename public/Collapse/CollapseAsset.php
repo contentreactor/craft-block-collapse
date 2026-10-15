@@ -1,13 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace ContentReactor\BlockCollapse\web\assets\collapse;
+namespace ContentReactor\BlockCollapse\Web\Assets\Collapse;
 
 use craft\web\AssetBundle;
 use craft\web\assets\cp\CpAsset;
 
 /**
  * The control panel's collapse/expand behaviour.
+ *
+ * Built from `assets/Collapse/src`; see the README.
  */
 class CollapseAsset extends AssetBundle
 {
@@ -18,10 +20,10 @@ class CollapseAsset extends AssetBundle
 	];
 
 	public $js = [
-		'collapse.js',
+		'js/app.js',
 	];
 
 	public $css = [
-		'collapse.css',
+		'css/app.css',
 	];
 }
