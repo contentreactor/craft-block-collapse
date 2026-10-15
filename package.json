@@ -1,0 +1,21 @@
+{
+	"name": "craft-block-collapse",
+	"description": "Control panel assets for the Block Collapse Craft plugin",
+	"license": "MIT",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "rollup -c",
+		"watch": "rollup -c --watch",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"prettier": "prettier src/web/assets/collapse/src tests/js rollup.config.js vitest.config.js --write --config .prettierrc"
+	},
+	"devDependencies": {
+		"@rollup/plugin-terser": "^0.4.4",
+		"jsdom": "^26.1.0",
+		"prettier": "^3.6.2",
+		"rollup": "^4.52.4",
+		"vitest": "^3.2.4"
+	}
+}
